@@ -44,14 +44,21 @@ function assert(expression, failureMessage) {
     fourth hour     |    4/hour        |        4         |
 
  TODO: First, make a constructor function, called Blob, that makes blobs.
-
+  
  TODO: Next, create an instance of Blob named blob.
 
  TODO: Then, use a loop to calculate how long it took the blob to finish
  with Dowington. */
 
+function Blob() {}
 
-var hoursSpentInDowington; // TODO: assign me the value of the
+var blob = new Blob();
+
+for (var i = 0; i < population.length; i++)
+
+
+var hoursSpentInDowington = var hoursSpentInDowington = blob.hoursToOoze(1000, 1);
+                            // TODO: assign me the value of the
                            // above calculation (how long it took
                            // the blob to eat Dowington)
 
@@ -60,9 +67,15 @@ var hoursSpentInDowington; // TODO: assign me the value of the
 // of hours the blob needs to ooze its way through that town.
 
 function hoursToOoze(population, peoplePerHour) {
+  this.population = population;
+  this.peoplePerHour = peoplePerHour;
+}
+
+  Blob.prototype.hoursToOoze = function(population, peoplePerHour) {
+
+}
   // TODO: implement me based on the instructions above.
   // Be sure to then assign me to the Blob's prototype.
-}
 
 assert(blob.hoursToOoze(0, 1) === 0, 'no people means no time needed.');
 assert(blob.hoursToOoze(1000, 1) === hoursSpentInDowington,
@@ -86,7 +99,9 @@ var hello = {
 // speak, and method (that you'll place on the prototype) called
 // sayHello.
 
-function SentientBeing () {
+function SentientBeing (homePlanet, language) {
+  this.homePlanet = homePlanet;
+  this.language = language;
   // TODO: specify a home planet and a language
   // you'll need to add parameters to this constructor
 }
@@ -104,6 +119,23 @@ function sayHello (sb) {
 
 // TODO: create three SentientBeings, one for each language in the
 // 'hello' object above.
+
+
+function Klingon() {
+ this.being = 'Klingon'
+}
+  Klingon.prototype = new SentientBeing('QonoS', 'Klingon')
+
+function Romulas() {
+  this.being = 'Romulas'
+}
+  Romulus.prototype = new SentientBeing('Romulas', 'Romulan')
+
+function English() {
+  this.being = 'English'
+} 
+  sayHello.English.prototype = new SentientBeing('Earth', 'English')
+
 var klingon = new SentientBeing(); // TODO: make a klingon
 var romulan = new SentientBeing(); // TODO: make a romulan
 var human = new SentientBeing(); // TODO: make a human
@@ -114,6 +146,17 @@ assert(human.sayHello(klingon) === 'nuqneH',
 // TODO: write five more assertions, to complete all the possible
 // greetings between the three types of sentient beings you created above.
 
+assert(human.sayHello(romulan) === 'Jolan\'tru',
+  'the romulan should hear 'Jolan\'tru');
+assert(klingon.sayHello(human) === 'hello', 
+  'the human should hear hello');
+asser(klingon.sayHello(romulan) === 'Jolan\'tru', 
+  'the human should hear Jolan\'tru');
+assert(romulan.sayHello(human) === 'hello',
+  'the human should hear hello');
+assert(romulan.sayHello(klingon) === 'nuqneH', 
+  'the klingon should hear nuqneH')
+
 //*********************************************************
 // PROBLEM 3: Moar Loops. 20 points.
 //
@@ -122,10 +165,15 @@ assert(human.sayHello(klingon) === 'nuqneH',
 //*********************************************************
 function max(array) {
   // TODO: return the largest number in the given array
-}
+  return Math.max.apply(Math, array);
+
+};
 
 // TODO: write three more assertions
-assert(max([ 1, 3, 2 ]) === 3, '[1,3,2]');
+assert(max([ 1, 2, 3 ]) === 3, '[1,2,3]');
+assert(max([ 4, 5, 6 ]) === 3, '[4,5,6]');
+assert(max([ 7, 8, 9]) === 3, '[7,8,9]');
+assert(max([ 10, 11, 12]) === 3, '[10,11,12]');
 
 function variablify(string) {
   // TODO: you are given a string with several words in it
@@ -137,10 +185,18 @@ function variablify(string) {
   // and this array method: join()
 }
 
+var splitString = variablify.split
+
+
 // TODO: write three more assertions
 assert(variablify('one two three') === 'oneTwoThree',
   'variablify(\'one two three\')');
-
+assert(variablify('four five six') === 'fourFiveSix',  
+ 'variablify(\'four five six\')');
+assert(variablify('seven eight nine') === 'sevenEightNine',  
+ 'variablify(\'seven eight nine\')');
+assert(variablify('ten eleven twelve') === 'tenElevenTwelve',  
+ 'variablify(\'ten eleven twelve\')');
 //*********************************************************
 // PROBLEM 4: Cleanup: 10 points
 // Makes sure this file passes jshint and jscs
