@@ -1,4 +1,4 @@
-## Foundations II: JavaScript 
+## Foundations II: JavaScript
 ### Lab 2, Beginning Track
 
 1. Make sure you're logged in to your account on GitHub.
@@ -15,3 +15,15 @@ comments. Be sure to read everything. Run lab2.js with `node lab2.js`.
 
 
 #### Resources and Collaborators
+
+//#########################################################
+
+//REFERENCES::
+//
+//MATH MAX
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
+//
+//STRING SORT:
+//http://stackoverflow.com/questions/1026069/capitalize-the-first-letter-of-string-in-javascript
+
+//###########################################################

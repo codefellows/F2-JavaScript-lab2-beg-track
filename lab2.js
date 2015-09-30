@@ -65,7 +65,7 @@ for (var i = 0; i < 1000; i++) {
   consume++;
   hoursSpentInDowington++;
   if (citizen < 0) {
-      //console.log("Hours spent in Dowington: " + hoursSpentInDowington);
+    console.log('Hours spent in Dowington: ' + hoursSpentInDowington);
     break;
   }
 }
